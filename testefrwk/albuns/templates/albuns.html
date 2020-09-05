@@ -1,0 +1,50 @@
+
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block main %}  
+    <div class="row">
+        <div class="col">
+           
+        </div>
+        <div class="col-6">
+            <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Listagem de posts</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Titulo</th>
+                  <th>Descrição</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for item in form1 %}   
+                    <tr>
+                        <td><a href="{% url 'album_atualizacao' item.id %}"> {{ item.titulo }}</td>
+                        <td><a href="{% url 'album_atualizacao' item.id %}"> {{ item.descricao }}</td>
+                    </tr>
+                    {% endfor %} 
+                </tbody>
+                <tfoot>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <a href="{% url 'album_novo' %}" class="submit_update" id="registrarBtn"> Registrar Novo Post </a>
+          
+        </div>
+        
+        </div>
+        <div class="col">
+        <br>
+       
+
+        </div>
+    </div>
+
+
+{% endblock %}
